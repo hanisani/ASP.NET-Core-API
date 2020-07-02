@@ -8566,11 +8566,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8589,8 +8589,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj"
+            "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj"
             }
           }
         }

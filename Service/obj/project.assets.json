@@ -677,11 +677,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj",
+      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj",
       "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\obj\\",
+      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -700,8 +700,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj"
+            "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj"
             }
           }
         }

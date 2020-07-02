@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj": {
+    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj",
+        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj",
         "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\obj\\",
+        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj": {
-                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj"
+              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj": {
+                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj": {
+    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj",
+        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj",
         "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\obj\\",
+        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -118,14 +118,14 @@
         }
       }
     },
-    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj": {
+    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj",
+        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj",
         "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\obj\\",
+        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -144,8 +144,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Contracts\\Contracts.csproj"
+              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj": {
+                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Contracts\\Contracts.csproj"
               }
             }
           }
@@ -183,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -209,8 +209,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj": {
-                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Service\\Repositories.csproj"
+              "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Service\\Repositories.csproj"
               }
             }
           }
