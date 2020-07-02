@@ -11,3 +11,16 @@ C:\Users\faheem.ahmad\source\repos\WebAPI\Service\obj\Debug\netcoreapp3.1\Reposi
 C:\Users\faheem.ahmad\source\repos\WebAPI\Service\obj\Debug\netcoreapp3.1\Repositories.csproj.CopyComplete
 C:\Users\faheem.ahmad\source\repos\WebAPI\Service\obj\Debug\netcoreapp3.1\Repositories.dll
 C:\Users\faheem.ahmad\source\repos\WebAPI\Service\obj\Debug\netcoreapp3.1\Repositories.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Repositories.deps.json
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Repositories.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Contracts.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Contracts.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.csprojAssemblyReference.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfoInputs.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfo.cs
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.csproj.CopyComplete
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp3.1\Repositories.pdb

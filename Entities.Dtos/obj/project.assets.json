@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\Entities.csproj",
+      "projectPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\Entities.csproj",
       "packagesPath": "C:\\Users\\faheem.ahmad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\Entities.Dtos\\obj\\",
+      "outputPath": "C:\\Users\\faheem.ahmad\\source\\repos\\WebAPI\\ASP.NET-Core-API\\Entities.Dtos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
