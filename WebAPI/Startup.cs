@@ -23,15 +23,15 @@ namespace WebAPI
         {
             services.AddControllers();
 
-            services.AddDbContextPool<SalesDBContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DevelopmentConnection")));
-            
+            services.AddDbContextPool<SalesDBContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("DevelopmentConnection")));
+
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -39,7 +39,6 @@ namespace WebAPI
             }
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

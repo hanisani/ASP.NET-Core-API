@@ -1,0 +1,13 @@
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Repositories.deps.json
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Repositories.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Contracts.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Entities.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Contracts.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\bin\Debug\netcoreapp2.2\Entities.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfoInputs.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfo.cs
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Service\obj\Debug\netcoreapp2.2\Repositories.pdb

@@ -1,0 +1,3 @@
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.csprojAssemblyReference.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.AssemblyInfoInputs.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.AssemblyInfo.cs
