@@ -15,5 +15,6 @@ namespace Repositories
         }
         public DbSet<Student> Student { get; set; }
         public DbSet<City> City { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }
