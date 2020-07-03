@@ -22,6 +22,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
 
             services.AddDbContextPool<SalesDBContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("DevelopmentConnection")));
@@ -38,6 +39,7 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
             app.UseRouting();
             app.UseAuthorization();
 
