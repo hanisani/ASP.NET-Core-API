@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -16,4 +16,18 @@ export class UserService {
   register(user: User) {
     return this.httpClient.post(this.baseUrl + 'api/user/register', user);
   }
+
+  login(user: User) {
+    return this.httpClient.post(this.baseUrl + 'api/user/login', user);
+  }
+
+  getUser() {
+    const tokenHeader = new HttpHeaders({
+      'Authorization':'Bearer ' + localStorage.getItem('token')
+    });
+    return this.httpClient.get(this.baseUrl + 'api/user/one', {
+      headers: tokenHeader
+    });
+  }
+
 }
