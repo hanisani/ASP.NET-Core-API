@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Sign up</h1>
+      </div>
+  </div>
+  <div class="col-md-12">
+    <form [formGroup]="formRegistration" autocomplete="off" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" formControlName="username">
+        <label class="text-danger" *ngIf="formRegistration.get('username').touched && formRegistration.get('username').errors?.required">This field is required</label>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" formControlName="email">
+        <label class="text-danger" *ngIf="formRegistration.get('email').touched && formRegistration.get('email').errors?.email">Invalid email</label>
+      </div>
+      <div class="form-group">
+        <label for="fullname">Fullname</label>
+        <input class="form-control" formControlName="fullname">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" formControlName="password">
+        <label class="text-danger" *ngIf="formRegistration.get('password').touched && formRegistration.get('password').errors?.required">This field is required</label>
+        <label class="text-danger" *ngIf="formRegistration.get('password').touched && formRegistration.get('password').errors?.minlength">Minimum 6 characters required</label>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input class="form-control" type="password" formControlName="confirmPassword">
+        <label class="text-danger" *ngIf="formRegistration.get('confirmPassword').touched && formRegistration.get('confirmPassword').errors?.required">This field is required</label>
+        <label class="text-danger" *ngIf="formRegistration.get('confirmPassword').touched && formRegistration.get('confirmPassword').errors?.passwordMismatch">Confrim passwod does not match</label>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!formRegistration.valid">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Sign in</h1>
+      </div>
+  </div>
+  <div class="col-md-12">
+    <form [formGroup]="formLogin" autocomplete="off" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" formControlName="username">
+        <label class="text-danger" *ngIf="formLogin.get('username').touched && formLogin.get('username').errors?.required">This field is required</label>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" formControlName="password">
+        <label class="text-danger" *ngIf="formLogin.get('password').touched && formLogin.get('password').errors?.required">This field is required</label>
+        <label class="text-danger" *ngIf="formLogin.get('password').touched && formLogin.get('password').errors?.minlength">Minimum 6 characters required</label>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!formLogin.valid">Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

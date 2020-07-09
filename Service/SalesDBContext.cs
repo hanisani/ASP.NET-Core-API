@@ -9,7 +9,12 @@ namespace Repositories
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
         public DbSet<Student> Student { get; set; }
         public DbSet<City> City { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

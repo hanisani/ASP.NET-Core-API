@@ -1,0 +1,8 @@
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\bin\Debug\netcoreapp2.2\Entities.deps.json
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\bin\Debug\netcoreapp2.2\Entities.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\bin\Debug\netcoreapp2.2\Entities.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp2.2\Entities.csprojAssemblyReference.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp2.2\Entities.AssemblyInfoInputs.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp2.2\Entities.AssemblyInfo.cs
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp2.2\Entities.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp2.2\Entities.pdb

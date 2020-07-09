@@ -1,0 +1,11 @@
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\bin\Debug\netcoreapp2.2\Contracts.deps.json
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\bin\Debug\netcoreapp2.2\Contracts.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\bin\Debug\netcoreapp2.2\Contracts.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\bin\Debug\netcoreapp2.2\Entities.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\bin\Debug\netcoreapp2.2\Entities.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.csprojAssemblyReference.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.AssemblyInfoInputs.cache
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.AssemblyInfo.cs
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.csproj.CopyComplete
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.dll
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Contracts\obj\Debug\netcoreapp2.2\Contracts.pdb
