@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LoginService } from '../services/login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +9,29 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): | boolean {
-    if (localStorage.getItem('token') !== null) {
-      return true;
-    } else {
-      this.router.navigate(['/user/login']);
-      return false;
-    }
+    let val = false;
+    this.loginService.getLoggedIn().subscribe(value => {
+      if (value) {
+        val = true;
+      } else {
+        this.router.navigate(['/user/login']);
+        val = false;
+      }
+    });
+    return val;
+    // if (localStorage.getItem('token') !== null) {
+    //   return true;
+    // } else {
+    //   this.router.navigate(['/user/login']);
+    //   return false;
+    // }
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,

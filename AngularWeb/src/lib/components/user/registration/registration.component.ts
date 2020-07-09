@@ -4,6 +4,7 @@ import { UserService } from 'src/lib/services/user.service';
 import { User } from 'src/lib/models/user.model';
 import { ToastrService } from 'ngx-toastr';
 import { Messages } from 'src/lib/utils/messages';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -18,10 +19,14 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
     ) { }
 
   ngOnInit() {
+    if (localStorage.getItem('token') !== null) {
+      this.router.navigateByUrl('/home');
+    }
     this.createForm();
     this.formRegistration.reset();
   }

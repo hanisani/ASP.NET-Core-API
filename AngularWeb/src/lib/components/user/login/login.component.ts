@@ -5,6 +5,7 @@ import { UserService } from 'src/lib/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Messages } from 'src/lib/utils/messages';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/lib/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private toastrService: ToastrService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
@@ -43,7 +45,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.user).subscribe((result: any) => {
       if (result) {
         localStorage.setItem('token', result.token);
-        this.router.navigateByUrl('/home');
+        this.loginService.setLoggedIn(true);
+        this.router.navigate(['home']); //.navigateByUrl('/home');
       }
     }, () => {
       this.toastrService.error(Messages.USER_NOT_FOUND, Messages.ERROR, {
