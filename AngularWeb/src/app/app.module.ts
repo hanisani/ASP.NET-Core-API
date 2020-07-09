@@ -19,6 +19,9 @@ import { TopNavigationComponent } from 'src/lib/controls/top-navigation/top-navi
 import { WelcomeComponent } from '../lib/components/welcome/welcome.component';
 import { BrownComponent } from '../lib/layouts/brown/brown.component';
 import { LoginService } from 'src/lib/services/login.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { LoginService } from 'src/lib/services/login.service';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    DataTablesModule
+    DataTablesModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [UserService, LoginService],
   bootstrap: [AppComponent]
