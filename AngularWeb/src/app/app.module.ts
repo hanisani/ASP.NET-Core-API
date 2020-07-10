@@ -12,13 +12,21 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from 'src/lib/components/user/login/login.component';
 import { HomeComponent } from 'src/lib/components/home/home.component';
 import { DataTablesModule } from 'angular-datatables';
-import { ListComponent } from 'src/lib/components/user/list/list.component';
+import { UserListComponent } from 'src/lib/components/user/user-list/user-list.component';
 import { UserService } from 'src/lib/services/user.service';
 import { HeaderComponent } from 'src/lib/controls/header/header.component';
 import { TopNavigationComponent } from 'src/lib/controls/top-navigation/top-navigation.component';
 import { WelcomeComponent } from '../lib/components/welcome/welcome.component';
 import { BrownComponent } from '../lib/layouts/brown/brown.component';
 import { LoginService } from 'src/lib/services/login.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CityListComponent } from 'src/lib/components/city/city-list/city-list.component';
+import { CityAddComponent } from '../lib/components/city/city-add/city-add.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +34,13 @@ import { LoginService } from 'src/lib/services/login.service';
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    ListComponent,
+    UserListComponent,
     HeaderComponent,
     TopNavigationComponent,
     WelcomeComponent,
-    BrownComponent
+    BrownComponent,
+    CityListComponent,
+    CityAddComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +49,16 @@ import { LoginService } from 'src/lib/services/login.service';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    DataTablesModule
+    DataTablesModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule
+  ],
+  entryComponents: [
+    CityAddComponent
   ],
   providers: [UserService, LoginService],
   bootstrap: [AppComponent]

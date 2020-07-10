@@ -14,6 +14,7 @@ import { LoginService } from 'src/lib/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
   user: User;
   formLogin: FormGroup;
 
@@ -35,8 +36,8 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.formLogin = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      username: ['', [Validators.required, Validators.maxLength(30)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]]
     });
   }
 
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
       if (result) {
         localStorage.setItem('token', result.token);
         this.loginService.setLoggedIn(true);
-        this.router.navigate(['home']); //.navigateByUrl('/home');
+        this.router.navigate(['home']); // .navigateByUrl('/home');
       }
     }, () => {
       this.toastrService.error(Messages.USER_NOT_FOUND, Messages.ERROR, {

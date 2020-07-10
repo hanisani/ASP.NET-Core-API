@@ -8,30 +8,47 @@
   <div class="col-md-12">
     <form [formGroup]="formRegistration" autocomplete="off" (submit)="onSubmit()">
       <div class="form-group">
-        <label for="username">Username</label>
-        <input class="form-control" formControlName="username">
-        <label class="text-danger" *ngIf="formRegistration.get('username').touched && formRegistration.get('username').errors?.required">This field is required</label>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" required>
+          <mat-hint align="end">{{formRegistration.get('username').value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="formRegistration.get('username').errors?.required">You must enter a value</mat-error>
+        </mat-form-field>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" formControlName="email">
-        <label class="text-danger" *ngIf="formRegistration.get('email').touched && formRegistration.get('email').errors?.email">Invalid email</label>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-hint align="end">{{formRegistration.get('email').value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="formRegistration.get('email').errors?.required">You must enter a value</mat-error>
+          <mat-error *ngIf="formRegistration.get('email').errors?.email">Invalid email</mat-error>
+        </mat-form-field>
       </div>
       <div class="form-group">
-        <label for="fullname">Fullname</label>
-        <input class="form-control" formControlName="fullname">
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Fullname</mat-label>
+          <input matInput formControlName="fullname">
+          <mat-hint align="end">{{formRegistration.get('username').value?.length || 0}}/30</mat-hint>
+        </mat-form-field>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input class="form-control" type="password" formControlName="password">
-        <label class="text-danger" *ngIf="formRegistration.get('password').touched && formRegistration.get('password').errors?.required">This field is required</label>
-        <label class="text-danger" *ngIf="formRegistration.get('password').touched && formRegistration.get('password').errors?.minlength">Minimum 6 characters required</label>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required>
+          <mat-hint align="end">{{formRegistration.get('password').value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="formRegistration.get('password').errors?.required">You must enter a value</mat-error>
+          <mat-error *ngIf="formRegistration.get('password').errors?.minlength">You must enter at least 6 characters</mat-error>
+        </mat-form-field>
       </div>
       <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input class="form-control" type="password" formControlName="confirmPassword">
-        <label class="text-danger" *ngIf="formRegistration.get('confirmPassword').touched && formRegistration.get('confirmPassword').errors?.required">This field is required</label>
-        <label class="text-danger" *ngIf="formRegistration.get('confirmPassword').touched && formRegistration.get('confirmPassword').errors?.passwordMismatch">Confrim passwod does not match</label>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" required>
+          <mat-hint align="end">{{formRegistration.get('password').value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="formRegistration.get('confirmPassword').errors?.required">You must enter a value</mat-error>
+          <mat-error *ngIf="formRegistration.get('confirmPassword').errors?.minlength">You must enter at least 6 characters</mat-error>
+          <mat-error *ngIf="formRegistration.get('confirmPassword').errors?.passwordMismatch">Confrim passwod does not match</mat-error>
+        </mat-form-field>
       </div>
       <div class="row">
         <div class="col-md-12">
