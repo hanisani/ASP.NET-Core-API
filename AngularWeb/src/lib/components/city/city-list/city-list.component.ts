@@ -38,16 +38,10 @@ export class CityListComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.cities);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    }, (error) => {
-      if (error.status === 404) { // statusText: "Not Found"
-      this.toastrService.info(Messages.NO_RECORD, Messages.INFO, {
+    }, () => {
+      this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
         timeOut: 3000
       });
-      } else {
-        this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
-          timeOut: 3000
-        });
-      }
     });
   }
 

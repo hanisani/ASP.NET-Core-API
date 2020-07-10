@@ -27,6 +27,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CityListComponent } from 'src/lib/components/city/city-list/city-list.component';
 import { CityAddComponent } from '../lib/components/city/city-add/city-add.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CityAddComponent } from '../lib/components/city/city-add/city-add.compo
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule
   ],
   entryComponents: [
     CityAddComponent
