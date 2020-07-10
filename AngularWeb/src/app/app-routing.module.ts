@@ -4,8 +4,9 @@ import { RegistrationComponent } from 'src/lib/components/user/registration/regi
 import { LoginComponent } from 'src/lib/components/user/login/login.component';
 import { HomeComponent } from 'src/lib/components/home/home.component';
 import { AuthGuard } from 'src/lib/guards/auth.guard';
-import { ListComponent } from 'src/lib/components/user/list/list.component';
+import { UserListComponent } from 'src/lib/components/user/user-list/user-list.component';
 import { WelcomeComponent } from 'src/lib/components/welcome/welcome.component';
+import { CityListComponent } from 'src/lib/components/city/city-list/city-list.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,15 @@ const routes: Routes = [
         path: 'login', component: LoginComponent
       },
       {
-        path: 'list', component: ListComponent, canActivate: [AuthGuard]
+        path: 'list', component: UserListComponent, canActivate: [AuthGuard]
+      }
+    ]
+  },
+  {
+    path: 'city',
+    children: [
+      {
+        path: 'list', component: CityListComponent, canActivate: [AuthGuard]
       }
     ]
   }

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
+import { BaseURL } from '../utils/constants';
+import { Helper } from '../utils/helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  baseUrl = 'http://localhost:54060/';
 
   constructor(
     private httpClient: HttpClient,
@@ -16,11 +16,11 @@ export class UserService {
   ) { }
 
   register(user: User) {
-    return this.httpClient.post(this.baseUrl + 'api/user/register', user);
+    return this.httpClient.post(BaseURL.URL + 'api/user/register', user);
   }
 
   login(user: User) {
-    return this.httpClient.post(this.baseUrl + 'api/user/login', user);
+    return this.httpClient.post(BaseURL.URL + 'api/user/login', user);
   }
 
   logout() {
@@ -29,11 +29,8 @@ export class UserService {
   }
 
   getUser() {
-    const tokenHeader = new HttpHeaders({
-      'Authorization':'Bearer ' + localStorage.getItem('token')
-    });
-    return this.httpClient.get(this.baseUrl + 'api/user/one', {
-      headers: tokenHeader
+    return this.httpClient.get(BaseURL.URL + 'api/user/one', {
+      headers: Helper.getHeaders()
     });
   }
 
