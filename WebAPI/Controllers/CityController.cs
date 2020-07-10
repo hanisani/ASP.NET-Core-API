@@ -21,10 +21,7 @@ namespace WebAPI.Controllers
         public IActionResult Get()
         {
             var cities = _CityRepository.GetCities();
-            if (cities.Count() == 0)
-            {
-                return NotFound("No city found");
-            }
+
             return Ok(cities);
         }
         
