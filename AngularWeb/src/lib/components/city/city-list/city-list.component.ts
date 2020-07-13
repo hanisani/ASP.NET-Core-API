@@ -6,6 +6,7 @@ import { City } from 'src/lib/models/city.model';
 import { MatDialogConfig, MatDialog, MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { ActionType } from 'src/lib/utils/constants';
 import { CityAddComponent } from '../city-add/city-add.component';
+import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-city-list',
@@ -86,17 +87,28 @@ export class CityListComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    this.cityService.delete(id).subscribe((result: any) => {
-      if (result) {
-        this.getAllCities();
-        this.toastrService.success(Messages.RECORD_DELETED, Messages.SUCCESS, {
-          timeOut: 3000
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+    };
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(response => {
+      if (response) {
+        this.cityService.delete(id).subscribe((result: any) => {
+          if (result) {
+            this.getAllCities();
+            this.toastrService.success(Messages.RECORD_DELETED, Messages.SUCCESS, {
+              timeOut: 3000
+            });
+          }
+        }, () => {
+          this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
+            timeOut: 3000
+          });
         });
       }
-    }, () => {
-      this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
-        timeOut: 3000
-      });
     });
   }
 

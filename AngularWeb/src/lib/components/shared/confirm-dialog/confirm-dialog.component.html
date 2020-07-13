@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 mat-dialog-title>Hi,</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    Are you sure?
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <mat-dialog-actions>
+      <button mat-raised-button [mat-dialog-close]="false">No</button>
+      <button type="submit" mat-raised-button color="primary" (click)="onYes()">Yes</button>
+    </mat-dialog-actions>
+  </div>
+</div>

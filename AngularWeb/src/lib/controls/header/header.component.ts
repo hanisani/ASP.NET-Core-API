@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/lib/services/user.service';
 import { LoginService } from 'src/lib/services/login.service';
 import { Subscription } from 'rxjs';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ConfirmDialogComponent } from 'src/lib/components/shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +17,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private userService: UserService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -25,8 +28,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
-    this.loginService.setLoggedIn(false);
-    this.userService.logout();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+    };
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(response => {
+      if (response) {
+        this.loginService.setLoggedIn(false);
+        this.userService.logout();
+      }
+    });
   }
 
   ngOnDestroy(): void {

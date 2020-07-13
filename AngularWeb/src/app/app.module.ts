@@ -30,6 +30,7 @@ import { CityAddComponent } from '../lib/components/city/city-add/city-add.compo
 import { MatButtonModule } from '@angular/material/button';
 import { TopNavigationBeforeLoginComponent } from '../lib/controls/top-navigation/top-navigation-before-login/top-navigation-before-login.component';
 import { TopNavigationAfterLoginComponent } from '../lib/controls/top-navigation/top-navigation-after-login/top-navigation-after-login.component';
+import { ConfirmDialogComponent } from '../lib/components/shared/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TopNavigationAfterLoginComponent } from '../lib/controls/top-navigation
     CityListComponent,
     CityAddComponent,
     TopNavigationBeforeLoginComponent,
-    TopNavigationAfterLoginComponent
+    TopNavigationAfterLoginComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { TopNavigationAfterLoginComponent } from '../lib/controls/top-navigation
     MatButtonModule
   ],
   entryComponents: [
-    CityAddComponent
+    CityAddComponent,
+    ConfirmDialogComponent
   ],
   providers: [UserService, LoginService],
   bootstrap: [AppComponent]
