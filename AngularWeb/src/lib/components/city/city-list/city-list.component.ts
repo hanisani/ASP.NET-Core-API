@@ -69,11 +69,11 @@ export class CityListComponent implements OnInit {
     }
   }
 
-  onEdit(id: number) {
+  onEdit(cityEdited: City) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
       mode: ActionType.Edit,
-      id
+      cityEdited
     };
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
