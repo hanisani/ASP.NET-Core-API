@@ -12,10 +12,6 @@ export class LoginService {
     return this.userLoggedIn.asObservable();
   }
 
-  getLoggedInValue(): boolean {
-    return this.userLoggedIn.getValue();
-  }
-
   setLoggedIn(val: boolean) {
     this.userLoggedIn.next(val);
   }
