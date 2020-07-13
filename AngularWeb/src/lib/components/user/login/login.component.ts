@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       if (result) {
         localStorage.setItem('token', result.token);
         this.loginService.setLoggedIn(true);
-        this.router.navigate(['home']); // .navigateByUrl('/home');
+        this.router.navigateByUrl('/home');
       }
     }, () => {
       this.toastrService.error(Messages.USER_NOT_FOUND, Messages.ERROR, {
