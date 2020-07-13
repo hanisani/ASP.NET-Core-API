@@ -14,10 +14,10 @@ import { ActionType } from 'src/lib/utils/constants';
 })
 export class CityAddComponent implements OnInit {
 
-  cityId: number;
   city: City;
   mode: string;
   formCity: FormGroup;
+  cityEdited: City;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -30,28 +30,14 @@ export class CityAddComponent implements OnInit {
   ngOnInit() {
     if (this.data) {
       this.mode = this.data.mode;
-      this.cityId = this.data.id;
+      this.cityEdited = this.data.cityEdited;
     }
-    if (this.cityId) {
-      this.getCityById();
+    if (this.cityEdited) {
+      this.city = this.cityEdited;
     } else {
       this.city = new City();
     }
     this.createForm();
-  }
-
-  getCityById() {
-    this.cityService.getCityById(this.cityId).toPromise().then((result: any) => {
-      if (result) {
-        this.city = result;
-      }
-    }).catch(() => {
-      this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
-        timeOut: 3000
-      });
-    }).finally(() => {
-      this.createForm();
-    });
   }
 
   createForm() {
@@ -79,7 +65,7 @@ export class CityAddComponent implements OnInit {
       });
     } else { // update
       this.city = this.formCity.value as City;
-      this.city.id = this.cityId;
+      this.city.id = this.cityEdited.id;
       this.cityService.update(this.city).subscribe((result: any) => {
         if (result) {
           this.city.id = result;
