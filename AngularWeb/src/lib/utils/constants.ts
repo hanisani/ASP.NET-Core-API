@@ -6,3 +6,7 @@ export enum ActionType {
   Add = 'add',
   Edit = 'edit'
 }
+
+export enum ToastrOptions {
+  TimeOut = 3000
+}

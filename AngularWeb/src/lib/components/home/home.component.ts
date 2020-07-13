@@ -4,6 +4,7 @@ import { UserService } from 'src/lib/services/user.service';
 import { User } from 'src/lib/models/user.model';
 import { Messages } from 'src/lib/utils/messages';
 import { ToastrService } from 'ngx-toastr';
+import { ToastrOptions } from 'src/lib/utils/constants';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
       }
     }, () => {
       this.toastrService.error(Messages.USER_NOT_FOUND, Messages.ERROR, {
-        timeOut: 3000
+        timeOut: ToastrOptions.TimeOut
       });
     });
   }

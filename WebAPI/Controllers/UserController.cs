@@ -13,12 +13,12 @@ namespace WebAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _UserRepository;
-        
+
         public UserController(IUserRepository UserRepository)
         {
             _UserRepository = UserRepository;
         }
-        
+
         [HttpGet("/api/[controller]/all")]
         public IActionResult Get()
         {
@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
             }
             return Ok(users);
         }
-        
+
         [HttpGet("/api/[controller]/one")]
         public IActionResult GetUser()
         {
@@ -39,7 +39,12 @@ namespace WebAPI.Controllers
             {
                 var result = _UserRepository.GetUserByID(int.Parse(userId));
 
-                return Ok(result);
+                return Ok(new
+                {
+                    result.Username,
+                    result.Email,
+                    result.Fullname
+                });
             }
             else
             {
@@ -71,7 +76,7 @@ namespace WebAPI.Controllers
                 return BadRequest();
             }
         }
-        
+
         [AllowAnonymous]
         [HttpPost("/api/[controller]/login")]
         public IActionResult Login(User user)
@@ -82,7 +87,10 @@ namespace WebAPI.Controllers
                 if (userExists != null)
                 {
                     var token = _UserRepository.GenerateJwtToken(userExists);
-                    return Ok(new { token });
+                    return Ok(new
+                    {
+                        token
+                    });
                 }
                 else
                 {

@@ -5,6 +5,7 @@ import { User } from 'src/lib/models/user.model';
 import { ToastrService } from 'ngx-toastr';
 import { Messages } from 'src/lib/utils/messages';
 import { Router } from '@angular/router';
+import { ToastrOptions } from 'src/lib/utils/constants';
 
 @Component({
   selector: 'app-registration',
@@ -61,12 +62,12 @@ export class RegistrationComponent implements OnInit {
       if (result) {
         this.formRegistration.reset();
         this.toastrService.success(Messages.USER_CREATED, Messages.SUCCESS, {
-          timeOut: 3000
+          timeOut: ToastrOptions.TimeOut
         });
       }
     }, () => {
       this.toastrService.error(Messages.USER_ALREADY_EXISTS, Messages.ERROR, {
-        timeOut: 3000
+        timeOut: ToastrOptions.TimeOut
       });
     });
   }

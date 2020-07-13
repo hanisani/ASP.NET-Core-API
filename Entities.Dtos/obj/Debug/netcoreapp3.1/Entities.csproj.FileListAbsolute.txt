@@ -12,3 +12,4 @@ C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Deb
 C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
 C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp3.1\Entities.dll
 C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\faheem.ahmad\source\repos\WebAPI\ASP.NET-Core-API\Entities.Dtos\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
