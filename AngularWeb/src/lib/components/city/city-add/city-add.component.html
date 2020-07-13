@@ -32,8 +32,8 @@
         <div class="row">
           <div class="col-md-12">
             <mat-dialog-actions>
-              <button class="btn btn-secondary mr-1" [mat-dialog-close]="false">Cancel</button>
-              <button type="submit" class="btn btn-primary" [disabled]="!formCity.valid" (click)="onSubmit()">
+              <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+              <button type="submit" mat-raised-button color="primary" [disabled]="!formCity.valid" (click)="onSubmit()">
                 <span *ngIf="mode === 'add'">
                   Add
                 </span>

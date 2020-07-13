@@ -28,6 +28,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CityListComponent } from 'src/lib/components/city/city-list/city-list.component';
 import { CityAddComponent } from '../lib/components/city/city-add/city-add.component';
 import { MatButtonModule } from '@angular/material/button';
+import { TopNavigationBeforeLoginComponent } from '../lib/controls/top-navigation/top-navigation-before-login/top-navigation-before-login.component';
+import { TopNavigationAfterLoginComponent } from '../lib/controls/top-navigation/top-navigation-after-login/top-navigation-after-login.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { MatButtonModule } from '@angular/material/button';
     WelcomeComponent,
     BrownComponent,
     CityListComponent,
-    CityAddComponent
+    CityAddComponent,
+    TopNavigationBeforeLoginComponent,
+    TopNavigationAfterLoginComponent
   ],
   imports: [
     BrowserModule,
