@@ -5,7 +5,7 @@ import { City } from 'src/lib/models/city.model';
 import { CityService } from 'src/lib/services/city.service';
 import { Messages } from 'src/lib/utils/messages';
 import { ToastrService } from 'ngx-toastr';
-import { ActionType } from 'src/lib/utils/constants';
+import { ActionType, ToastrOptions } from 'src/lib/utils/constants';
 
 @Component({
   selector: 'app-city-add',
@@ -55,12 +55,12 @@ export class CityAddComponent implements OnInit {
           this.city.id = result;
           this.dialogRef.close(this.city);
           this.toastrService.success(Messages.RECORD_CREATED, Messages.SUCCESS, {
-            timeOut: 3000
+            timeOut: ToastrOptions.TimeOut
           });
         }
       }, () => {
         this.toastrService.error(Messages.RECORD_ALREADY_EXISTS, Messages.ERROR, {
-          timeOut: 3000
+          timeOut: ToastrOptions.TimeOut
         });
       });
     } else { // update
@@ -71,12 +71,12 @@ export class CityAddComponent implements OnInit {
           this.city.id = result;
           this.dialogRef.close(this.city);
           this.toastrService.success(Messages.RECORD_CREATED, Messages.SUCCESS, {
-            timeOut: 3000
+            timeOut: ToastrOptions.TimeOut
           });
         }
       }, () => {
         this.toastrService.error(Messages.RECORD_ALREADY_EXISTS, Messages.ERROR, {
-          timeOut: 3000
+          timeOut: ToastrOptions.TimeOut
         });
       });
     }

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Messages } from 'src/lib/utils/messages';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/lib/services/login.service';
+import { ToastrOptions } from 'src/lib/utils/constants';
 
 @Component({
   selector: 'app-login',
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
       }
     }, () => {
       this.toastrService.error(Messages.USER_NOT_FOUND, Messages.ERROR, {
-        timeOut: 3000
+        timeOut: ToastrOptions.TimeOut
       });
     });
   }

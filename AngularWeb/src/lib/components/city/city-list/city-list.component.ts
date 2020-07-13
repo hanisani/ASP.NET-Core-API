@@ -4,7 +4,7 @@ import { Messages } from 'src/lib/utils/messages';
 import { ToastrService } from 'ngx-toastr';
 import { City } from 'src/lib/models/city.model';
 import { MatDialogConfig, MatDialog, MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { ActionType } from 'src/lib/utils/constants';
+import { ActionType, ToastrOptions } from 'src/lib/utils/constants';
 import { CityAddComponent } from '../city-add/city-add.component';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 
@@ -41,7 +41,7 @@ export class CityListComponent implements OnInit {
       this.dataSource.sort = this.sort;
     }, () => {
       this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
-        timeOut: 3000
+        timeOut: ToastrOptions.TimeOut
       });
     });
   }
@@ -100,12 +100,12 @@ export class CityListComponent implements OnInit {
           if (result) {
             this.getAllCities();
             this.toastrService.success(Messages.RECORD_DELETED, Messages.SUCCESS, {
-              timeOut: 3000
+              timeOut: ToastrOptions.TimeOut
             });
           }
         }, () => {
           this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
-            timeOut: 3000
+            timeOut: ToastrOptions.TimeOut
           });
         });
       }
