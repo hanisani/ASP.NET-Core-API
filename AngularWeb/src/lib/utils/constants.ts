@@ -1,5 +1,6 @@
 export enum BaseURL {
-  URL = 'http://localhost:54060/'
+  LocalURL = 'http://localhost:54060/',
+  WebURL = 'http://api.salesportal.com:8083/'
 }
 
 export enum ActionType {

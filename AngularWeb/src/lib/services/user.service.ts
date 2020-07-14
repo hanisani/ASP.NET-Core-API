@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
-import { BaseURL } from '../utils/constants';
 import { Helper } from '../utils/helper';
 
 @Injectable({
@@ -16,11 +15,11 @@ export class UserService {
   ) { }
 
   register(user: User) {
-    return this.httpClient.post(BaseURL.URL + 'api/user/register', user);
+    return this.httpClient.post(Helper.getBaseUrl() + 'api/user/register', user);
   }
 
   login(user: User) {
-    return this.httpClient.post(BaseURL.URL + 'api/user/login', user);
+    return this.httpClient.post(Helper.getBaseUrl() + 'api/user/login', user);
   }
 
   logout() {
@@ -29,13 +28,19 @@ export class UserService {
   }
 
   getUser() {
-    return this.httpClient.get(BaseURL.URL + 'api/user/one', {
+    return this.httpClient.get(Helper.getBaseUrl() + 'api/user/one', {
       headers: Helper.getHeaders()
     });
   }
 
   isAuthenticated() {
     return localStorage.getItem('token') !== null;
+  }
+
+  getAllUsers() {
+    return this.httpClient.get(Helper.getBaseUrl() + 'api/user/all', {
+      headers: Helper.getHeaders()
+    });
   }
 
 }

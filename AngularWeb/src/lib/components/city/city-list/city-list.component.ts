@@ -17,7 +17,6 @@ export class CityListComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'code', 'actions'];
   dataSource: MatTableDataSource<City>;
-
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   cities: City[] = [];
