@@ -63,7 +63,7 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200", "http://web.salesportal.com:8085", "*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
