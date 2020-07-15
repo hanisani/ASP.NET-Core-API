@@ -1,42 +1,61 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { CityService } from 'src/lib/services/city.service';
 import { Messages } from 'src/lib/utils/messages';
 import { ToastrService } from 'ngx-toastr';
 import { City } from 'src/lib/models/city.model';
-import { MatDialogConfig, MatDialog, MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatDialogConfig, MatDialog, MatTableDataSource, MatPaginator, MatSort, PageEvent } from '@angular/material';
 import { ActionType, ToastrOptions } from 'src/lib/utils/constants';
 import { CityAddComponent } from '../city-add/city-add.component';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-city-list',
   templateUrl: './city-list.component.html',
   styleUrls: ['./city-list.component.css']
 })
-export class CityListComponent implements OnInit {
+export class CityListComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['id', 'name', 'code', 'actions'];
   dataSource: MatTableDataSource<City>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   cities: City[] = [];
+  recordsPerPage = 5;
+  pageNumber = 0;
+  pageEvent: PageEvent;
+  totalRecords = 0;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+  formSearch: FormGroup;
 
   constructor(
     private cityService: CityService,
     private toastrService: ToastrService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private fb: FormBuilder
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.createForm();
+  }
+
+  createForm() {
+    this.formSearch = this.fb.group({
+      searchText: ['', [Validators.maxLength(10)]]
+    });
+  }
+
+  ngAfterViewInit(): void {
     this.getAllCities();
   }
 
-
   getAllCities() {
-    this.cityService.getAllCities().subscribe((result: City[]) => {
+    const searchText = String(this.formSearch.controls.searchText.value).trim().toLowerCase();
+    this.cityService.getAllCities(searchText, this.pageNumber + 1, this.recordsPerPage).subscribe((result: City[]) => {
       this.cities = result;
+      this.totalRecords = this.cities[0].total;
       this.dataSource = new MatTableDataSource(this.cities);
-      this.dataSource.paginator = this.paginator;
+      this.paginator.length = this.totalRecords;
       this.dataSource.sort = this.sort;
     }, () => {
       this.toastrService.error(Messages.ERROR_OCCURRED, Messages.ERROR, {
@@ -60,13 +79,9 @@ export class CityListComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  applyFilter() {
+    this.getAllCities();
+    this.paginator.firstPage();
   }
 
   onEdit(cityEdited: City) {
@@ -109,6 +124,12 @@ export class CityListComponent implements OnInit {
         });
       }
     });
+  }
+
+  handlePageChange(event: PageEvent) {
+    this.pageNumber = event.pageIndex;
+    this.recordsPerPage = event.pageSize;
+    this.getAllCities();
   }
 
 }

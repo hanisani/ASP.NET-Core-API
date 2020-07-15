@@ -18,8 +18,10 @@ export class CityService {
     });
   }
 
-  getAllCities() {
-    return this.httpClient.get(Helper.getBaseUrl() + 'api/city/all', {
+  getAllCities(searchText: string = '', pageNumber: number = 1, recordsPerPage: number = 5) {
+    return this.httpClient.get(Helper.getBaseUrl() + 'api/city/all?searchText=' + searchText +
+                                                                            '&pageNumber=' + pageNumber +
+                                                                            '&recordsPerPage=' + recordsPerPage, {
       headers: Helper.getHeaders()
     });
   }

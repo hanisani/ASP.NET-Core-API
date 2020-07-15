@@ -5,7 +5,7 @@ namespace Contracts
 {
     public interface ICityRepository
     {
-        IEnumerable<City> GetCities();
+        IEnumerable<CityViewModel> GetCities(string searchText, int pageNumber, int recordsPerPage);        
         City GetCityByID(int cityId);
         City GetCityByNameAndCode(string name, string code);
         int Add(City city);
