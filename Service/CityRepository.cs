@@ -43,41 +43,11 @@ namespace Repositories
 
             if (string.IsNullOrEmpty(searchText))
             {
-                var totalRecords = _salesDBContext.City.Count();
-
-                var result = _salesDBContext.City.Skip(skip).Take(recordsPerPage).ToList();
-
-                IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
-                { 
-                    Id = x.Id,
-                    Name = x.Name,
-                    Code = x.Code,
-                    Total = totalRecords
-                });
-
-                return p;
+                return GetCitiesByPaging(skip, recordsPerPage);
             }
             else
             {
-                var totalRecords = _salesDBContext.City.Where(
-                    x => x.Name.ToLower().Contains(searchText) ||
-                    x.Code.ToLower().Contains(searchText)
-                ).Count();
-
-                var result = _salesDBContext.City.Where(
-                    x => x.Name.ToLower().Contains(searchText) ||
-                    x.Code.ToLower().Contains(searchText)
-                ).Skip(skip).Take(recordsPerPage).ToList();
-
-                IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Code = x.Code,
-                    Total = totalRecords
-                });
-
-                return p;
+                return GetCitiesBySearchTextAndPaging(searchText, skip, recordsPerPage);
             }
         }
 
@@ -106,5 +76,47 @@ namespace Repositories
                 return true;
             }
         }
+
+        #region Other Methods
+        public IEnumerable<CityViewModel> GetCitiesByPaging(int skip, int recordsPerPage)
+        {
+            var totalRecords = _salesDBContext.City.Count();
+
+            var result = _salesDBContext.City.Skip(skip).Take(recordsPerPage).ToList();
+
+            IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Code = x.Code,
+                Total = totalRecords
+            });
+
+            return p;
+        }
+
+        public IEnumerable<CityViewModel> GetCitiesBySearchTextAndPaging(string searchText, int skip, int recordsPerPage)
+        {
+            var totalRecords = _salesDBContext.City.Where(
+                    x => x.Name.ToLower().Contains(searchText) ||
+                    x.Code.ToLower().Contains(searchText)
+                ).Count();
+
+            var result = _salesDBContext.City.Where(
+                x => x.Name.ToLower().Contains(searchText) ||
+                x.Code.ToLower().Contains(searchText)
+            ).Skip(skip).Take(recordsPerPage).ToList();
+
+            IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Code = x.Code,
+                Total = totalRecords
+            });
+
+            return p;
+        }
+        #endregion
     }
 }
