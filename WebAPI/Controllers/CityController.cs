@@ -11,20 +11,20 @@ namespace WebAPI.Controllers
     public class CityController : ControllerBase
     {
         private readonly ICityRepository _CityRepository;
-        
+
         public CityController(ICityRepository CityRepository)
         {
             _CityRepository = CityRepository;
         }
-        
+
         [HttpGet("/api/[controller]/all")]
-        public IActionResult Get()
+        public IActionResult Get(string searchText = "", int pageNumber = 1, int recordsPerPage = 5)
         {
-            var cities = _CityRepository.GetCities();
+            var cities = _CityRepository.GetCities(searchText, pageNumber, recordsPerPage);
 
             return Ok(cities);
         }
-        
+
         [HttpGet("/api/[controller]/one")]
         public IActionResult GetOne(int id)
         {

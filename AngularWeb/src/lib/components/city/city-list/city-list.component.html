@@ -4,10 +4,15 @@
   </div>
 </div>
 
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-</mat-form-field>
+<form [formGroup]="formSearch" autocomplete="off">
+  <div class="form-group">
+    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter()" placeholder="Ex. Mia" #input formControlName="searchText">
+      <mat-hint align="end">{{formSearch.get('searchText').value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+  </div>
+</form>
 
 <div class="row">
   <div class="col-md-12">
@@ -50,6 +55,12 @@
       </tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    <mat-paginator
+      [length]="totalRecords"
+      [pageSize]="recordsPerPage"
+      [pageSizeOptions]="pageSizeOptions"
+      [showFirstLastButtons]="true"
+      (page)="pageEvent = handlePageChange($event)">
+    </mat-paginator>
   </div>
 </div>

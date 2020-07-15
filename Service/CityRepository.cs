@@ -9,7 +9,7 @@ namespace Repositories
     public class CityRepository : ICityRepository
     {
         private readonly SalesDBContext _salesDBContext;
-        
+
         public CityRepository(SalesDBContext salesDBContext)
         {
             _salesDBContext = salesDBContext;
@@ -37,9 +37,48 @@ namespace Repositories
             }
         }
 
-        public IEnumerable<City> GetCities()
+        public IEnumerable<CityViewModel> GetCities(string searchText, int pageNumber, int recordsPerPage)
         {
-            return _salesDBContext.City.ToList();
+            var skip = (pageNumber - 1) * recordsPerPage;
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                var totalRecords = _salesDBContext.City.Count();
+
+                var result = _salesDBContext.City.Skip(skip).Take(recordsPerPage).ToList();
+
+                IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
+                { 
+                    Id = x.Id,
+                    Name = x.Name,
+                    Code = x.Code,
+                    Total = totalRecords
+                });
+
+                return p;
+            }
+            else
+            {
+                var totalRecords = _salesDBContext.City.Where(
+                    x => x.Name.ToLower().Contains(searchText) ||
+                    x.Code.ToLower().Contains(searchText)
+                ).Count();
+
+                var result = _salesDBContext.City.Where(
+                    x => x.Name.ToLower().Contains(searchText) ||
+                    x.Code.ToLower().Contains(searchText)
+                ).Skip(skip).Take(recordsPerPage).ToList();
+
+                IEnumerable<CityViewModel> p = result.Select(x => new CityViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Code = x.Code,
+                    Total = totalRecords
+                });
+
+                return p;
+            }
         }
 
         public City GetCityByID(int id)
@@ -58,7 +97,7 @@ namespace Repositories
             if (result == null)
             {
                 return false;
-            } 
+            }
             else
             {
                 result.Name = city.Name;
