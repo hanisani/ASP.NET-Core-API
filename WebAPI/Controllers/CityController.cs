@@ -10,6 +10,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CityController : ControllerBase
     {
+        private const int DefaultCount = 5;
         private readonly ICityRepository _CityRepository;
 
         public CityController(ICityRepository CityRepository)
@@ -18,7 +19,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("/api/[controller]/all")]
-        public IActionResult Get(string searchText = "", int pageNumber = 1, int recordsPerPage = 5)
+        public IActionResult Get([FromQuery] string searchText = "", [FromQuery] int pageNumber = 1, [FromQuery] int recordsPerPage = DefaultCount)
         {
             var cities = _CityRepository.GetCities(searchText, pageNumber, recordsPerPage);
 

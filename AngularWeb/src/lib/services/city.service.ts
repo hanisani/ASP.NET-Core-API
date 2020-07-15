@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { City } from '../models/city.model';
 import { Helper } from '../utils/helper';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,15 @@ export class CityService {
     });
   }
 
-  getAllCities(searchText: string = '', pageNumber: number = 1, recordsPerPage: number = 5) {
-    return this.httpClient.get(Helper.getBaseUrl() + 'api/city/all?searchText=' + searchText +
-                                                                            '&pageNumber=' + pageNumber +
-                                                                            '&recordsPerPage=' + recordsPerPage, {
+  getAllCities(searchText: string = '', pageNumber: number = 1, recordsPerPage: number = 5): Observable<City[]> {
+    let params = new HttpParams();
+
+    params = params.append('searchText', searchText);
+    params = params.append('pageNumber', pageNumber.toString());
+    params = params.append('recordsPerPage', recordsPerPage.toString());
+
+    return this.httpClient.get<City[]>(Helper.getBaseUrl() + 'api/city/all', {
+      params,
       headers: Helper.getHeaders()
     });
   }
