@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from 'src/lib/components/user/registration/registration.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -31,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TopNavigationBeforeLoginComponent } from '../lib/controls/top-navigation/top-navigation-before-login/top-navigation-before-login.component';
 import { TopNavigationAfterLoginComponent } from '../lib/controls/top-navigation/top-navigation-after-login/top-navigation-after-login.component';
 import { ConfirmDialogComponent } from '../lib/components/shared/confirm-dialog/confirm-dialog.component';
+import { SalesInterceptorService } from 'src/lib/services/sales-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,11 @@ import { ConfirmDialogComponent } from '../lib/components/shared/confirm-dialog/
     CityAddComponent,
     ConfirmDialogComponent
   ],
-  providers: [UserService, LoginService],
+  providers: [UserService, LoginService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: SalesInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
