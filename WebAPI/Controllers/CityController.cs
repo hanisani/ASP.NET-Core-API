@@ -1,11 +1,13 @@
 ﻿using System.Linq;
 using Contracts;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CityController : ControllerBase
@@ -27,7 +29,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("/api/[controller]/one")]
-        public IActionResult GetOne(int id)
+        public IActionResult GetOne([FromQuery] int id)
         {
             var city = _CityRepository.GetCityByID(id);
             if (city == null)
@@ -39,7 +41,7 @@ namespace WebAPI.Controllers
 
         [HttpPost("/api/[controller]/add")]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public IActionResult Add(City city)
+        public IActionResult Add([FromBody] City city)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +64,7 @@ namespace WebAPI.Controllers
 
         [HttpPut("/api/[controller]/update")]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public IActionResult Update(City city)
+        public IActionResult Update([FromBody] City city)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +86,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("/api/[controller]/delete")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete([FromQuery] int id)
         {
             if (ModelState.IsValid)
             {
